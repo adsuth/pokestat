@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéStat</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/adsu_searchbar.js" type="module"></script>
+  <script src="./js/definitions.js" type="module"></script>
+  <script src="./js/frontend.js"    type="module"></script>
+  <script src="./js/stats.js"       type="module"></script>
+  <script src="./js/index.js"       type="module"></script>
+
+</head>
+<body>
+  <header id="site_header">
+    <nav id="site_nav">
+      <div class="button_container">
+        <button id="btn_reset" class="button">  Reset </button>
+        <button id="btn_maxAll" class="button off_button"> Max All </button>
+        <button id="btn_minAll" class="button off_button"> Min All </button>
+      </div>
+      <h1 id="site_heading"> PokéStat </h1>
+      <div class="button_container">
+        <button id="btn_toggleNatures" class="button off_button"> Ignore Natures </button>
+        <button id="btn_showEVs" class="button off_button"> Show EVs </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="site_content">
+    <section id="body_section">
+      <div id="body_content">
+
+        <button id="sprite_image" class="button">
+          <img src="meta/unknown.png" alt="Sprite of the current Pokémon."></img>
+        </button>
+        
+        <p id="pokemon_species">
+          Name of Pokémon
+        </p>
+        
+        <div id="pokemon_level_container">
+          <input name="pokemon_level" type="number" id="pokemon_level" value="5" max="100" min="1">
+        </div>
+        
+        <section id="stat_section">
+          <div id="stats_names"   class="stat_row">
+            <span class="stat_col" data-name="hp" >HP</span>
+            <span class="stat_col" data-name="atk">ATK</span>
+            <span class="stat_col" data-name="def">DEF</span>
+            <span class="stat_col" data-name="spa">SpA</span>
+            <span class="stat_col" data-name="spd">SpD</span>
+            <span class="stat_col" data-name="spe">SPE</span>
+          </div> 
+          
+          <div id="stats_calc"    class="stat_row">
+            <span class="stat_col" data-name="hp"  data-nature="~">0</span>
+            <span class="stat_col" data-name="atk" data-nature="~">0</span>
+            <span class="stat_col" data-name="def" data-nature="~">0</span>
+            <span class="stat_col" data-name="spa" data-nature="~">0</span>
+            <span class="stat_col" data-name="spd" data-nature="~">0</span>
+            <span class="stat_col" data-name="spe" data-nature="~">0</span>
+          </div>  
+  
+          <div id="stats_evs"     class="stat_row">
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="hp" >
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="atk">
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="def">
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="spa">
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="spd">
+            <input type="number" value="0" class="stat_col" max="252" min="0" data-name="spe">
+          </div>  
+  
+          <div id="stats_ivs"     class="stat_row">
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="hp" >
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="atk">
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="def">
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="spa">
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="spd">
+            <input type="number" value="15" class="stat_col" max="31" min="0" data-name="spe">
+          </div>  
+  
+          <div id="stats_natures" class="stat_row">
+            <button class="stat_col" data-name="hp"  data-nature="~"></button>          
+            <button class="stat_col" data-name="atk" data-nature="~"></button>          
+            <button class="stat_col" data-name="def" data-nature="~"></button>          
+            <button class="stat_col" data-name="spa" data-nature="~"></button>          
+            <button class="stat_col" data-name="spd" data-nature="~"></button>          
+            <button class="stat_col" data-name="spe" data-nature="~"></button>          
+          </div>  
+      </div>
+      </section>
+
+    </section>
+  </main>
+
+  <aside class="modal_container" id="pokemon_modal">
+    <div class="modal_content">
+      <p class="modal_heading">Select a Pokémon</p>
+      <div  id="pokemon_modal_search" class="pokemon_modal_search_root">
+      </div>
+      <div class="pokemon_modal_items">
+      </div>
+
+    </div>
+  </aside>
+  
+</body>
+</html>

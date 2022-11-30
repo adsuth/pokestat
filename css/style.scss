@@ -1,4 +1,7 @@
-@import url("//db.onlinewebfonts.com/c/deebfd9f40481b86b0cb7f9806c7b826?family=KG+Blank+Space+Solid");
+@font-face {
+  font-family: KGBlankSpaceSolid;
+  src:url("../meta/KGBlankSpaceSolid.ttf");
+}
 
 *
 {
@@ -41,7 +44,7 @@ input,
 button
 {
   font-size: 3rem;
-  font-family: "KG Blank Space Solid ", sans-serif;
+  font-family: KGBlankSpaceSolid, sans-serif;
   color: var(--color-dark);
   cursor: default;
   text-align: center;
